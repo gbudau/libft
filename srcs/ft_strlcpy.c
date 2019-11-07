@@ -6,7 +6,7 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 14:39:35 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/05 15:36:06 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/07 23:19:00 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static size_t	ft_strlen(const char *str)
 	size_t i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (*(str + i))
 		i++;
 	return (i);
 }
@@ -25,17 +25,12 @@ static size_t	ft_strlen(const char *str)
 size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t i;
-	size_t j;
 
 	i = ft_strlen(src);
-	j = 0;
 	if (!(dstsize))
 		return (i);
-	while (src[j] != '\0' && j < dstsize - 1)
-	{
-		dst[j] = src[j];
-		j++;
-	}
-	dst[j] = '\0';
+	*(dst + (dstsize - 1)) = '\0';
+	while (*src != '\0' && dstsize--)
+		*(dst + (dstsize - 2)) = *(src + (dstsize - 2));
 	return (i);
 }
