@@ -1,0 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/09 00:02:58 by gbudau            #+#    #+#             */
+/*   Updated: 2019/11/09 00:35:48 by gbudau           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <string.h>
+
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	unsigned char	ch;
+	const char		*ptr;
+
+	ch = c;
+	ptr = s;
+	while (*ptr != ch && n)
+	{
+		n--;
+		ptr++;
+	}
+	if (!(n))
+		return (NULL);
+	return ((void *)ptr);
+}
