@@ -6,13 +6,13 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 14:39:35 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/10 22:19:22 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/11 00:06:17 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-static size_t	ft_strlen(const char *str)
+static size_t	ft_strlentmp(const char *str)
 {
 	size_t i;
 
@@ -27,7 +27,7 @@ size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t len;
 	size_t i;
 
-	len = ft_strlen(src);
+	len = ft_strlentmp(src);
 	if (!(dstsize))
 		return (len);
 	i = 0;
