@@ -6,11 +6,11 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 14:39:35 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/08 14:10:23 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/10 22:19:22 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "../includes/libft.h"
 
 static size_t	ft_strlen(const char *str)
 {

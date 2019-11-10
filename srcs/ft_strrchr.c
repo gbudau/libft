@@ -6,11 +6,11 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 22:42:30 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/06 14:40:46 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/10 22:19:15 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define NULL 0
+#include "../includes/libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
