@@ -6,7 +6,7 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 14:32:43 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/08 23:52:02 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/10 01:30:26 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ void		*ft_memmove(void *dst, const void *src, size_t len)
 		return (dst);
 	else if ((char *)src < (char *)dst)
 	{
-		while (len--)
+		while (len + 1)
 		{
-			*((char *)dst + len) = *((char *)src + len);
+			*((char *)dst + (len - 1)) = *((char *)src + (len - 1));
+			len--;
 		}
 		return (dst);
 	}

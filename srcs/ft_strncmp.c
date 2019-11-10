@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 21:35:40 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/10 01:24:24 by gbudau           ###   ########.fr       */
+/*   Created: 2019/11/09 20:32:32 by gbudau            #+#    #+#             */
+/*   Updated: 2019/11/10 00:55:16 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned char	ch;
-	size_t			i;
+	const char *str1;
+	const char *str2;
 
-	ch = c;
-	i = 0;
-	while (n + 1)
+	str1 = s1;
+	str2 = s2;
+	while (*str1 && *str2 && n + 1)
 	{
-		*((char *)dst + i) = *((char *)src + i);
-		i++;
+		if (*str1 != *str2)
+			return (((unsigned char)*str1) - ((unsigned char)*str2));
+		str1++;
+		str2++;
 		n--;
-		if (*((char *)src + (i - 1)) == ch)
-			return ((void *)((char *)dst + i));
 	}
-	return (NULL);
+	return (((unsigned char)*str1) - ((unsigned char)*str2));
 }

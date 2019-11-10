@@ -6,7 +6,7 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 20:05:03 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/06 21:24:13 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/10 01:23:47 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	while (n)
+	while (n + 1)
 	{
 		*((char *)dst + (n - 1)) = *((char *)src + (n - 1));
 		n--;

@@ -6,7 +6,7 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 00:02:58 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/09 00:35:48 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/10 01:35:48 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	ch = c;
 	ptr = s;
-	while (*ptr != ch && n)
+	while (*ptr != ch && n + 1)
 	{
 		n--;
 		ptr++;
 	}
-	if (!(n))
+	if (!(n + 1))
 		return (NULL);
 	return ((void *)ptr);
 }
