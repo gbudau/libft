@@ -6,7 +6,7 @@
 #    By: gbudau <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 00:42:18 by gbudau            #+#    #+#              #
-#    Updated: 2019/11/11 00:42:24 by gbudau           ###   ########.fr        #
+#    Updated: 2019/11/11 17:07:41 by gbudau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,16 +31,16 @@ OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 $(ODIR)/%.o: $(ODIR)/%.c $(DEPS)
 	$(COMPILE.c) $< $(OUTPUT_OPTION)
 
-.PHONY: all
-all: $(NAME)
-
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) 
 	ar ru $@ $^
 	ranlib $@
 
+.PHONY: all
+all: $(NAME)
+
 .PHONY: clean
 clean:
-	$(RM) $(ODIR)/*.o
+	$(RM) $(OBJ)
 
 .PHONY: fclean
 fclean: clean
