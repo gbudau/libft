@@ -6,7 +6,7 @@
 #    By: gbudau <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 00:42:18 by gbudau            #+#    #+#              #
-#    Updated: 2019/11/11 17:07:41 by gbudau           ###   ########.fr        #
+#    Updated: 2019/11/12 22:49:30 by gbudau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,15 +28,15 @@ _OBJ = ft_bzero.o ft_memccpy.o ft_memchr.o ft_memcmp.o \
 	   
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
+.PHONY: all
+all: $(NAME)
+
 $(ODIR)/%.o: $(ODIR)/%.c $(DEPS)
 	$(COMPILE.c) $< $(OUTPUT_OPTION)
 
 $(NAME): $(OBJ) 
-	ar ru $@ $^
+	ar ruv $@ $^
 	ranlib $@
-
-.PHONY: all
-all: $(NAME)
 
 .PHONY: clean
 clean:
@@ -48,8 +48,4 @@ fclean: clean
 
 .PHONY: re
 re: fclean all
-
-.PHONY: print-
-print-%:
-	@echo '$*=$($*)'
 
