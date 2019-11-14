@@ -6,41 +6,27 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 18:51:00 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/11 00:07:09 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/14 17:03:37 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-static size_t	ft_strlentmp(const char *str)
-{
-	size_t i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
 size_t			ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t i;
-	size_t j;
-	size_t k;
-	size_t l;
+	size_t		i;
+	size_t		j;
 
-	i = ft_strlentmp(dst) + ft_strlentmp(src);
+	i = 0;
+	while (dst[i] && i < dstsize)
+		i++;
 	j = 0;
-	k = ft_strlentmp(dst);
-	l = ft_strlentmp(dst);
-	if (!(dstsize))
-		return (i);
-	while (src[j] != '\0' && j + l < dstsize - 1)
+	while (src[j] && (i + j + 1) < dstsize)
 	{
-		dst[k] = src[j];
-		k++;
+		dst[i + j] = src[j];
 		j++;
 	}
-	dst[k] = '\0';
-	return (i);
+	if (i + j < dstsize)
+		dst[i + j] = '\0';
+	return (i + ft_strlen(src));
 }
