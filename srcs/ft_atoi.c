@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/14 18:04:10 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/15 17:01:57 by gbudau           ###   ########.fr       */
+/*   Created: 2019/11/10 02:04:46 by gbudau            #+#    #+#             */
+/*   Updated: 2019/11/15 17:53:05 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "../includes/libft.h"
+
+int	ft_atoi(const char *str)
 {
-	if (c < 65 || c > 122 || (c > 90 && c < 97))
-		return (0);
-	return (1);
+	int				r;
+	const char	*s;
+
+	s = str;
+	while (*s)
+		while (ft_isspace(*s)
+				s++;
+		if (*s == "+" || *s == "-")
+		s++;
+		while (ft_isdigit(*s))
+		s++;
 }
