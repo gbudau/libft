@@ -6,7 +6,7 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 21:34:03 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/16 15:47:54 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/17 15:33:51 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_isspace(int c);
 int		ft_atoi(const char *str);
+void	*ft_calloc(size_t count, size_t size);
 
 #endif
