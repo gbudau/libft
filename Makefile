@@ -6,7 +6,7 @@
 #    By: gbudau <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 00:42:18 by gbudau            #+#    #+#              #
-#    Updated: 2019/11/17 15:34:33 by gbudau           ###   ########.fr        #
+#    Updated: 2019/11/17 18:53:53 by gbudau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,9 @@ _OBJ = ft_bzero.o ft_memccpy.o ft_memchr.o ft_memcmp.o \
 	   ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strncmp.o \
 	   ft_strnstr.o ft_strrchr.o ft_isalpha.o ft_isdigit.o \
 	   ft_isalnum.o ft_isascii.o ft_isprint.o ft_toupper.o \
-	   ft_tolower.o ft_isspace.o ft_atoi.o ft_calloc.o
+	   ft_tolower.o ft_isspace.o ft_atoi.o ft_calloc.o \
+	   ft_strdup.o ft_substr.o ft_strncpy_void.o ft_strjoin.o \
+	   ft_strlcpycat.o
 	   
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 

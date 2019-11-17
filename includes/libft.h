@@ -6,7 +6,7 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 21:34:03 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/17 15:33:51 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/17 18:57:39 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,10 @@ int		ft_tolower(int c);
 int		ft_isspace(int c);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
+char	*ft_strdup(const char *s1);
+void	ft_strncpy_void(char *dst, const char *src, size_t len);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+void	ft_strlcpycat(char *dst, char const *s1, char const *s2, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif
