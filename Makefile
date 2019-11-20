@@ -6,7 +6,7 @@
 #    By: gbudau <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 00:42:18 by gbudau            #+#    #+#              #
-#    Updated: 2019/11/18 19:54:11 by gbudau           ###   ########.fr        #
+#    Updated: 2019/11/19 21:37:11 by gbudau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJ = ft_bzero.o ft_memccpy.o ft_memchr.o ft_memcmp.o \
 	   ft_isalnum.o ft_isascii.o ft_isprint.o ft_toupper.o \
 	   ft_tolower.o ft_isspace.o ft_atoi.o ft_calloc.o \
 	   ft_strdup.o ft_substr.o  ft_strjoin.o ft_strtrim.o \
-	   ft_strndup.o
+	   ft_strndup.o ft_searchchr.o
 	   
 	   
 .PHONY: all
@@ -48,3 +48,9 @@ fclean: clean
 .PHONY: re
 re: fclean all
 
+.PHONY: test
+test: fclean
+	cd ../libft-unit-tests && make re  && ./run_test
+	cd ../libft && make fclean
+	cd ../libft-war-machine-v2019 && ./grademe.sh
+	cd ../libft && make fclean
