@@ -6,13 +6,11 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 19:39:19 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/18 21:38:05 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/20 17:09:35 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <errno.h>
-#include <stdlib.h>
 
 char	*ft_strndup(const char *s1, size_t n)
 {

@@ -6,12 +6,11 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 22:31:27 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/17 15:32:31 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/20 17:09:09 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <errno.h>
 
 void	*ft_calloc(size_t count, size_t size)
 {

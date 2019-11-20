@@ -6,14 +6,13 @@
 #    By: gbudau <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 00:42:18 by gbudau            #+#    #+#              #
-#    Updated: 2019/11/19 21:37:11 by gbudau           ###   ########.fr        #
+#    Updated: 2019/11/20 17:46:18 by gbudau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = gcc
-DEPS = libft.h
-CFLAGS = -Wall -Wextra -Werror -I $(DEPS)
+CFLAGS = -Wall -Wextra -Werror
 COMPILE.c = $(CC) $(CFLAGS) -c
 OUTPUT_OPTION = -o $@
 
@@ -24,17 +23,17 @@ OBJ = ft_bzero.o ft_memccpy.o ft_memchr.o ft_memcmp.o \
 	   ft_isalnum.o ft_isascii.o ft_isprint.o ft_toupper.o \
 	   ft_tolower.o ft_isspace.o ft_atoi.o ft_calloc.o \
 	   ft_strdup.o ft_substr.o  ft_strjoin.o ft_strtrim.o \
-	   ft_strndup.o ft_searchchr.o
+	   ft_strndup.o ft_searchchr.o ft_split.o
 	   
 	   
 .PHONY: all
 all: $(NAME)
 
-%.o: %.c $(DEPS)
+%.o: %.c
 	$(COMPILE.c) $< $(OUTPUT_OPTION)
 
 $(NAME): $(OBJ) 
-	ar ruv $@ $^
+	ar rc $@ $^
 	ranlib $@
 
 .PHONY: clean

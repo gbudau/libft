@@ -6,40 +6,39 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 22:19:21 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/20 01:55:03 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/20 18:48:51 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	size_t	i;
-	char	*s_end;
-	char	*w_end;
-	char	*w_start;
-	char 	**split;
+	size_t		i;
+	char const	*s_e;
+	char const	*w_e;
+	char		**split;
 
-	s_end = s;
+	if (s == NULL)
+		return (NULL);
+	s_e = s;
 	i = 0;
-	while (*s_end)
+	while (*s_e)
 	{
-		if ((*s_end != c && *(s_end + 1) == c) || 
-			(*s_end != c && *(s_end + 1) == '\0'))
+		if ((*s_e != c && *(s_e + 1) == c) || (*s_e != c && !(*(s_e + 1))))
 			i++;
-		s_end++;
+		s_e++;
 	}
 	if (!(split = ft_calloc(i + 1, sizeof(char *))))
 		return (NULL);
-	while (s <= s_end--)
+	s_e--;
+	while (i && (s <= s_e))
 	{
-		if ((*s_end != c && *(s_end + 1) == c) ||
-			(*s_end != c && *(s_end + 1) == '\0'))
-			w_end = s_end;
-		if (condition to get word start pointer, assign pointer to w_start then ft_strndup to i - 1)
-
-
-		s_end--;
+		if ((*s_e != c && *(s_e + 1) == c) || (*s_e != c && !(*(s_e + 1))))
+			w_e = s_e;
+		if (*s_e != c && (s_e == s || *(s_e - 1) == c))
+			split[i-- - 1] = ft_strndup(s_e, (w_e - s_e) + 1);
+		s_e--;
 	}
-
+	return (split);
 }
