@@ -6,12 +6,14 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 21:34:03 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/20 22:44:16 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/21 16:42:54 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define IN 1
+# define OUT 0
 # include <stdlib.h>
 # include <unistd.h>
 # include <errno.h>

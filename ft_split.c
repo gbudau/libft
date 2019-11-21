@@ -6,7 +6,7 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 22:19:21 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/20 21:44:40 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/21 22:39:50 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,55 @@
 static size_t	ft_wn(char const *s, char c)
 {
 	size_t i;
+	size_t state;
 
 	i = 0;
-	while (*s)
+	state = OUT;
+	while (*s != '\0')
 	{
-		if ((*s != c && *(s + 1) == c) || (*s != c && !(*(s + 1))))
+		if (*s == c)
+			state = OUT;
+		else if (state == OUT)
+		{
+			state = IN;
 			i++;
+		}
 		s++;
 	}
 	return (i);
 }
 
+static char		**ft_strtomatr(char **split, char const *s, char c)
+{
+	char const	*ws;
+	char const	*we;
+	size_t		j;
+	size_t		fw;
+
+	j = 0;
+	fw = 1;
+	while (*s != '\0')
+	{
+		if ((j == 0 && *s != c && *(s + 1) && fw == 1
+					|| (*s != c && *(s - 1) == c)))
+		{
+			ws = s;
+			fw = 0;
+		}
+		if ((*s != c && *(s + 1) == c) || (*s != c && *(s + 1) == '\0'))
+		{
+			we = s;
+			split[j] = ft_strndup(ws, we - ws + 1);
+			j++;
+		}
+		s++;
+	}
+	return (split);
+}
+
 char			**ft_split(char const *s, char c)
 {
 	size_t		i;
-	char const	*s_e;
-	char const	*w_e;
 	char		**split;
 
 	if (s == NULL)
@@ -38,14 +71,5 @@ char			**ft_split(char const *s, char c)
 	i = ft_wn(s, c);
 	if (!(split = ft_calloc(i + 1, sizeof(char *))))
 		return (NULL);
-	s_e = &s[ft_strlen(s) - 1];
-	while (i && (s <= s_e))
-	{
-		if ((*s_e != c && *(s_e + 1) == c) || (*s_e != c && !(*(s_e + 1))))
-			w_e = s_e;
-		if (*s_e != c && (s_e == s || *(s_e - 1) == c))
-			split[i-- - 1] = ft_strndup(s_e, (w_e - s_e) + 1);
-		s_e--;
-	}
-	return (split);
+	return (ft_strtomatr(split, s, c));
 }
