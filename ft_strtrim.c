@@ -6,7 +6,7 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 19:04:07 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/20 20:47:53 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/22 18:32:04 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = s1;
 	while (ft_strchr(set, *start) && *start)
 		start++;
-	end = s1;
+	if (*start == '\0')
+		return (ft_strdup(""));
+	end = start;
 	while (*(end + 1))
 		end++;
 	while (ft_strchr(set, *end) && end > s1)
 		end--;
-	if (end < start)
-		return (ft_strdup(""));
 	return (ft_strndup(start, (end - start) + 1));
 }
