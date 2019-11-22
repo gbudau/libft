@@ -6,7 +6,7 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 22:19:21 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/21 23:52:27 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/22 18:14:04 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,26 +36,23 @@ static size_t	ft_wn(char const *s, char c)
 static char		**ft_strtomatr(char **split, char const *s, char c)
 {
 	char const	*ws;
-	char const	*we;
-	size_t		j;
-	size_t		fw;
+	int			j;
+	size_t		state;
 
-	j = 0;
-	fw = 1;
+	j = -1;
+	state = 0;
 	while (*s != '\0')
 	{
-		if (((j == 0 && *s != c && *(s + 1) && fw == 1)
-					|| (*s != c && *(s - 1) == c)))
+		if (*s == c)
+			state = OUT;
+		else if (state == OUT)
 		{
+			state = IN;
 			ws = s;
-			fw = 0;
-		}
-		if ((*s != c && *(s + 1) == c) || (*s != c && *(s + 1) == '\0'))
-		{
-			we = s;
-			split[j] = ft_strndup(ws, we - ws + 1);
 			j++;
 		}
+		if ((state == IN && *(s + 1) == c) || (state == IN && *(s + 1) == '\0'))
+			split[j] = ft_strndup(ws, s - ws + 1);
 		s++;
 	}
 	return (split);
