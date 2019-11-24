@@ -6,7 +6,7 @@
 #    By: gbudau <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 00:42:18 by gbudau            #+#    #+#              #
-#    Updated: 2019/11/24 02:22:32 by gbudau           ###   ########.fr        #
+#    Updated: 2019/11/24 02:47:34 by gbudau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ OBJ = ft_bzero.o ft_memccpy.o ft_memchr.o ft_memcmp.o \
 	   ft_strdup.o ft_substr.o  ft_strjoin.o ft_strtrim.o \
 	   ft_strndup.o ft_split.o ft_itoa.o ft_strmapi.o \
 	   ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o \
-	   #ft_putnbr_fd.o
+	   ft_putnbr_fd.o
 	   
 	   
 .PHONY: all
