@@ -6,7 +6,7 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 21:34:03 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/23 22:29:07 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/24 02:21:11 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,9 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
