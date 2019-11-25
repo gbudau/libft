@@ -6,7 +6,7 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 22:31:27 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/23 21:52:54 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/25 20:09:29 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	char	*ret;
+	void	*ret;
 
 	if (!(ret = malloc(size * count)))
 	{

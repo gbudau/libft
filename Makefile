@@ -6,7 +6,7 @@
 #    By: gbudau <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 00:42:18 by gbudau            #+#    #+#              #
-#    Updated: 2019/11/24 18:31:38 by gbudau           ###   ########.fr        #
+#    Updated: 2019/11/25 17:55:15 by gbudau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ bonus: $(BON_OBJ)\
 
 .PHONY: clean
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(BON_OBJ)
 
 .PHONY: fclean
 fclean: clean
