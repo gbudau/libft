@@ -6,7 +6,7 @@
 #    By: gbudau <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 00:42:18 by gbudau            #+#    #+#              #
-#    Updated: 2019/11/25 17:55:15 by gbudau           ###   ########.fr        #
+#    Updated: 2019/11/26 21:16:59 by gbudau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,10 +25,10 @@ OBJ = ft_bzero.o ft_memccpy.o ft_memchr.o ft_memcmp.o \
 	   ft_strdup.o ft_substr.o  ft_strjoin.o ft_strtrim.o \
 	   ft_strndup.o ft_split.o ft_itoa.o ft_strmapi.o \
 	   ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o \
-	   ft_putnbr_fd.o
+	   ft_putnbr_fd.o 
 
-#BON_OBJ = ft_lstnew.o ft_lstadd_front.o ft_lstsize.o \
-		  ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o \
+BON_OBJ = ft_lstnew.o ft_lstadd_front.o ft_lstsize.o \
+		  ft_lstlast.o ft_lstadd_back.o #ft_lstdelone.o \
 		  ft_lstclear.o ft_lstiter.o ft_lstmap.o
 	   
 .PHONY: all
@@ -41,10 +41,10 @@ $(NAME): $(OBJ)
 	ar rc $@ $^
 	ranlib $@
 
-#.PHONY: bonus\
-bonus: $(BON_OBJ)\
-	ar rc $@ $^\
-	ranlib $@
+.PHONY: bonus
+bonus: $(BON_OBJ)
+	ar rc $(NAME) $^
+	ranlib $(NAME)
 
 .PHONY: clean
 clean:
