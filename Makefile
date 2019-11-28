@@ -6,7 +6,7 @@
 #    By: gbudau <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 00:42:18 by gbudau            #+#    #+#              #
-#    Updated: 2019/11/26 21:16:59 by gbudau           ###   ########.fr        #
+#    Updated: 2019/11/26 22:57:43 by gbudau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,22 +15,10 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 COMPILE.c = $(CC) $(CFLAGS) -c
 OUTPUT_OPTION = -o $@
+OBJ = $(subst .c,.o,$(filter-out $(wildcard ft_lst*), $(wildcard ft_*.c)))
+BON_OBJ = $(subst .c,.o,$(filter $(wildcard ft_lst*), $(wildcard ft_*.c)))
+   
 
-OBJ = ft_bzero.o ft_memccpy.o ft_memchr.o ft_memcmp.o \
-	   ft_memcpy.o ft_memmove.o ft_memset.o ft_strchr.o \
-	   ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strncmp.o \
-	   ft_strnstr.o ft_strrchr.o ft_isalpha.o ft_isdigit.o \
-	   ft_isalnum.o ft_isascii.o ft_isprint.o ft_toupper.o \
-	   ft_tolower.o ft_isspace.o ft_atoi.o ft_calloc.o \
-	   ft_strdup.o ft_substr.o  ft_strjoin.o ft_strtrim.o \
-	   ft_strndup.o ft_split.o ft_itoa.o ft_strmapi.o \
-	   ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o \
-	   ft_putnbr_fd.o 
-
-BON_OBJ = ft_lstnew.o ft_lstadd_front.o ft_lstsize.o \
-		  ft_lstlast.o ft_lstadd_back.o #ft_lstdelone.o \
-		  ft_lstclear.o ft_lstiter.o ft_lstmap.o
-	   
 .PHONY: all
 all: $(NAME)
 
@@ -38,13 +26,11 @@ all: $(NAME)
 	$(COMPILE.c) $< $(OUTPUT_OPTION)
 
 $(NAME): $(OBJ) 
-	ar rc $@ $^
-	ranlib $@
+	ar rcs $@ $^
 
 .PHONY: bonus
 bonus: $(BON_OBJ)
-	ar rc $(NAME) $^
-	ranlib $(NAME)
+	ar rcs $(NAME) $^
 
 .PHONY: clean
 clean:
@@ -63,3 +49,4 @@ test: fclean
 	cd ../libft && make fclean
 	cd ../libft-war-machine-v2019 && ./grademe.sh
 	cd ../libft && make fclean
+
