@@ -6,7 +6,7 @@
 /*   By: gbudau <gbudau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/29 17:05:41 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/29 19:42:14 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/29 19:59:18 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 
 	if (*lst != NULL)
 	{
-		while (*lst != NULL)	
+		while (*lst != NULL)
 		{
 			temp = (*lst)->next;
 			ft_lstdelone(*lst, del);
