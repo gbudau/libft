@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbudau <gbudau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/26 20:10:20 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/26 21:04:16 by gbudau           ###   ########.fr       */
+/*   Created: 2019/11/29 14:56:13 by gbudau            #+#    #+#             */
+/*   Updated: 2019/11/29 16:00:37 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,13 @@
 
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	t_list	*temp;
+	t_list *p2;
 
-	if (*alst != NULL)
-	{
-		if (new != NULL)
-		{
-			temp = ft_lstlast(*alst);
-			temp->next = new;
-			new->next = NULL;
-		}
-	}
-	else if (new != NULL)
+	if (*alst == NULL)
 		*alst = new;
+	else
+	{
+		p2 = ft_lstlast(*alst);
+		p2->next = new;
+	}
 }
