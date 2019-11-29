@@ -6,7 +6,7 @@
 /*   By: gbudau <gbudau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/26 18:34:51 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/26 18:58:19 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/28 23:00:37 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	new->next = *alst;
-	*alst = new;
+	if (*alst == NULL)
+		*alst = new;
+	else
+	{
+		new->next = *alst;
+		*alst = new;
+	}
 }
