@@ -6,7 +6,7 @@
 #    By: gbudau <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 00:42:18 by gbudau            #+#    #+#              #
-#    Updated: 2019/11/29 14:34:51 by gbudau           ###   ########.fr        #
+#    Updated: 2019/11/30 20:23:08 by gbudau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,10 +42,4 @@ fclean: clean
 
 .PHONY: re
 re: fclean all
-
-.PHONY: test
-test: fclean
-	cd ../libft-unit-tests && make re && ./run_test
-	cd ../libft-war-machine-v2019 && ./grademe.sh -ob
-	cd ../libft && make fclean
 
