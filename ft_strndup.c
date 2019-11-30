@@ -6,7 +6,7 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 19:39:19 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/30 19:54:24 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/30 19:59:46 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strndup(const char *s1, size_t n)
 	if (len < n)
 		return (ft_strdup(s1));
 	if (!(ret = malloc(sizeof(char) * n + 1)))
-			return (NULL);
+		return (NULL);
 	*(ret + n) = '\0';
 	while (len-- && n--)
 		*(ret + n) = *(s1 + n);
