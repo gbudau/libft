@@ -6,7 +6,7 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 22:31:27 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/25 20:09:29 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/30 19:54:39 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ void	*ft_calloc(size_t count, size_t size)
 	void	*ret;
 
 	if (!(ret = malloc(size * count)))
-	{
-		errno = ENOMEM;
 		return (NULL);
-	}
 	ft_bzero(ret, (size * count));
 	return (ret);
 }

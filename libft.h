@@ -6,7 +6,7 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 21:34:03 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/30 15:44:44 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/11/30 19:55:18 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # define OUT 0
 # include <stdlib.h>
 # include <unistd.h>
-# include <errno.h>
 
 typedef struct		s_list
 {
