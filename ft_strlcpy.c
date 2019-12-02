@@ -6,7 +6,7 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 14:39:35 by gbudau            #+#    #+#             */
-/*   Updated: 2019/12/02 14:36:06 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/12/02 14:55:14 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 	if (dstsize == 0)
 		return (ft_strlen(src));
+	if (dst == NULL)
+		return (0);
 	i = 0;
 	j = 0;
 	while (src[i])
