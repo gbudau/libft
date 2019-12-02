@@ -6,12 +6,16 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 17:14:03 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/15 17:19:13 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/12/02 16:13:18 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_toupper(int c)
 {
+	if (c < 0 || c == EOF)
+		return (c);
 	if (c > 96 && c < 123)
 		c -= 32;
 	return (c);
