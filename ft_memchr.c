@@ -6,7 +6,7 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 00:02:58 by gbudau            #+#    #+#             */
-/*   Updated: 2019/12/02 09:36:20 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/12/02 09:54:34 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	const char		*ptr;
-	unsigned char 	ch;
+	unsigned char	ch;
 
 	ch = c;
 	ptr = s;
