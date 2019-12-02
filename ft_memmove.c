@@ -6,7 +6,7 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 14:32:43 by gbudau            #+#    #+#             */
-/*   Updated: 2019/12/02 09:54:13 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/12/02 09:55:52 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void		*ft_memmove(void *dst, const void *src, size_t len)
 	char		*d;
 	char const	*s;
 
-	if (d == s)
+	if (dst == src)
 		return (dst);
 	d = dst;
 	s = src;

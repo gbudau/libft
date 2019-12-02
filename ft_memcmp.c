@@ -6,7 +6,7 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 00:43:40 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/12 00:31:00 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/12/02 12:33:38 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	str1 = s1;
 	str2 = s2;
-	if (str1 == str2)
+	if (str1 == str2 || (*str1 == '\0' && *str2 == '\0'))
 		return (0);
 	while (n)
 	{
