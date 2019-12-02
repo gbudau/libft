@@ -6,7 +6,7 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 19:04:07 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/22 18:32:04 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/12/01 17:15:40 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	const char	*start;
 	const char	*end;
 
-	if (s1 == NULL || set == NULL || (*s1 == '\0' && *set == '\0'))
+	if (s1 == NULL || set == NULL)
 		return (NULL);
 	start = s1;
 	while (ft_strchr(set, *start) && *start)
