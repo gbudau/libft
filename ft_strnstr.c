@@ -3,39 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: gbudau <gbudau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/09 18:08:47 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/24 17:54:41 by gbudau           ###   ########.fr       */
+/*   Created: 2019/12/02 20:40:47 by gbudau            #+#    #+#             */
+/*   Updated: 2019/12/02 22:51:22 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s, const char *subs, size_t len)
+char	*ft_strnstr(const char *hay, const char *need, size_t len)
 {
-	const char *retptr;
-	const char *reset;
+	const char *resetn;
+	const char *ret;
 
-	if (!(*subs))
-		return ((char *)s);
-	while (len + 1 && *s)
+	if (*need == '\0')
+		return ((char *)hay);
+	ret = hay;
+	resetn = need;
+	while (*hay && len)
 	{
-		if (*s == *subs && len)
+		need = resetn;
+		while ((*hay == *need) && *hay != '\0' && *need != '\0' && len)
 		{
-			reset = subs;
-			retptr = s;
-			while (*s == *subs && *subs && len)
-			{
-				s++;
-				subs++;
-				len--;
-			}
-			if (!(*subs))
-				return ((char *)retptr);
-			subs = reset;
+			need++;
+			hay++;
+			len--;
 		}
-		s++;
+		if (*need == '\0')
+			return ((char *)hay - (need - resetn));
+		if (*hay == '\0' || len == '\0')
+			return (NULL);
+		hay++;
 		len--;
 	}
 	return (NULL);

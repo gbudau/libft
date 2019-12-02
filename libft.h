@@ -6,7 +6,7 @@
 /*   By: gbudau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 21:34:03 by gbudau            #+#    #+#             */
-/*   Updated: 2019/12/02 16:16:34 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/12/02 22:11:35 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memset(void *b, int c, size_t len);
 char				*ft_strchr(const char *s, int c);
-char				*ft_strnstr(const char *s, const char *subs, size_t len);
+char				*ft_strnstr(const char *hay, const char *need, size_t len);
 char				*ft_strrchr(const char *s, int c);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
