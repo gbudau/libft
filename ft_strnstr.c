@@ -6,7 +6,7 @@
 /*   By: gbudau <gbudau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 20:40:47 by gbudau            #+#    #+#             */
-/*   Updated: 2019/12/03 21:11:53 by gbudau           ###   ########.fr       */
+/*   Updated: 2019/12/03 21:25:08 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strnstr(const char *hay, const char *need, size_t len)
 			return ((char *)hay - (need - resetn));
 		if (*hay == '\0' || len == '\0')
 			return (NULL);
-		hay = ++ret
+		hay = ++ret;
 		len += (need - resetn);
 		len--;
 	}
