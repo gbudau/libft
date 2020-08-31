@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_strcspn.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbudau <gbudau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/25 17:23:48 by gbudau            #+#    #+#             */
-/*   Updated: 2019/11/28 20:48:47 by gbudau           ###   ########.fr       */
+/*   Created: 2020/06/22 17:54:22 by gbudau            #+#    #+#             */
+/*   Updated: 2020/06/22 17:54:23 by gbudau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+size_t	ft_strcspn(const char *str1, const char *str2)
 {
-	t_list *new;
+	size_t	i;
 
-	if (!(new = malloc(sizeof(t_list))))
-		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	i = 0;
+	while (*str1 != '\0')
+	{
+		if (ft_strchr(str2, *str1) != NULL)
+			return (i);
+		str1++;
+		i++;
+	}
+	return (i);
 }
